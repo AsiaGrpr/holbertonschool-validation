@@ -52,3 +52,12 @@ The API is written in the Golang language but there is no need to be familiar wi
 While the production team is building the new production platform for the website, you’ve been tasked to create an HTTP API application to add new features.
 
 As we are in a “DevOps” course, your “Ops” personality expects that this application is monitored by a “Health” page to determine if the application is running and ready to accept traffic.
+
+## Lifecycle
+
+    - help: Print this help message.
+    - build: Build the application.
+    - run: Run the application in the background.
+    - stop: Stop the application.
+    - clean: Stop the application, delete the binary and log file.
+    - test: Test the application.
