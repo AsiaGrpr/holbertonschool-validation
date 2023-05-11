@@ -20,3 +20,6 @@ help: ## Show help command
 
 lint: ## Test lint on the files
 	@golangci-lint run
+
+unit-tests: ## Test of unit test
+	go test -v -short -coverprofile=coverage-units.out
