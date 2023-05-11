@@ -8,8 +8,7 @@ stop: ## Stop the application
 	@kill "$(shell pgrep awesome-api)" 2>/dev/null &
 
 clean:  ## Delete content of dist folder
-	@rm -rf ./awesome-api && rm -rf awesome.log
-	@pgrep awesome-api | xargs kill
+	@make stop && rm -rf awesome-api awesome-api.log
 
 test: ## Test the application
 	@curl http://localhost:9999
