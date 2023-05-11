@@ -1,6 +1,5 @@
 build:  ## Create Website
-	@golangci-lint run
-	@go build
+	@make lint && go build || exit -1
 
 run: ## Run the application
 	@./awesome-api >./awesome.log 2>&1 &
