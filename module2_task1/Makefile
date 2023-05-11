@@ -5,7 +5,7 @@ run: ## Run the application
 	@./awesome-api >./awesome.log 2>&1 &
 
 stop: ## Stop the application
-	@pgrep awesome-api | xargs kill
+	@kill "$(shell pgrep awesome-api)" 2>/dev/null &
 
 clean:  ## Delete content of dist folder
 	@rm -rf ./awesome-api && rm -rf awesome.log
