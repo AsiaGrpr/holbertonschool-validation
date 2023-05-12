@@ -68,6 +68,17 @@ As we are in a “DevOps” course, your “Ops” personality expects that this
     - post: Create a new blog post with a specified title and filename.
     - check: check the post
     - validate: validate the index.html
+    - test: Test to ensure that it behaves as expected. 
+
+    - lint: Test lint in the files
+
+    - unit-tests: Run files with the _test.go suffix 
+
+    - integration-tests: Run Golang integration tests 
+
+    - run: Run the application in background by executing the binary ```awesome-api```, and write logs into a file named ```awesome-api.log```
+
+    - stop: Stop the application with the command kill XXXXX where XXXXX is the Process ID of the application.
 
 ## Usage
 
