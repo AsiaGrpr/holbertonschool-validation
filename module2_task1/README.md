@@ -61,3 +61,7 @@ As we are in a “DevOps” course, your “Ops” personality expects that this
     - stop: Stop the application.
     - clean: Stop the application, delete the binary and log file.
     - test: Test the application.
+
+## Logging 
+
+All logs are written to ./awesome-api.log using the Winston logger.

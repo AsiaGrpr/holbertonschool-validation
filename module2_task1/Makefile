@@ -1,22 +1,22 @@
-build:  ## Create Website
-	@make lint && go build || exit -1
+help:## Help
+	-fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
 
-run: ## Run the application
-	@./awesome-api >./awesome.log 2>&1 &
+build:## Build the application
+	make lint && go build || exit -1
 
-stop: ## Stop the application
-	@kill "$(shell pgrep awesome-api)" 2>/dev/null &
+run:## Run
+	./awesome-api >./awesome-api.log 2>&1 &
 
-clean:  ## Delete content of dist folder
-	@rm -rf ./awesome-api && rm -rf awesome.log
-	@pgrep awesome-api | xargs kill
+stop:## Stop
+	-kill "$(shell pgrep awesome-api)"
 
-test: ## Test the application
-	@curl http://localhost:9999
-	@curl http://localhost:9999/health
+clean:## Clean
+	-make stop
+	-rm -rf awesome-api
 
-help: ## Show help command
-	@sed -ne '/@sed/!s/## //p' Makefile
+test:## Test
+	curl http://localhost:9999
+	curl http://localhost:9999/health
 
 lint: ## Test lint on the files
-	@golangci-lint run
+	golangci-lint run
