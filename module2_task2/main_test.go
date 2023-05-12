@@ -31,29 +31,30 @@ func Test_HelloHandler(t *testing.T) {
       body:         "Hello Rosalind Franklin!",
     },
     {
-		name:         "Empty",
-		queryString:  "name=",
-		responseCode: 400,
-	  },
-	  {
-		name:         "B212",
-		queryString:  "name=B212",
+      name:         "Empty",
+      queryString:  "name=",
+      responseCode: 400,
+    },
+	{
+      name:         "B212",
+      queryString:  "name=B212",
+      responseCode: 200,
+      body:         "Hello B212!",
+    },
+	{
+		name:         "Multiple name",
+		queryString:  "name=Betty&name=Holberton",
 		responseCode: 200,
-		body:         "Hello B212!",
+		body:         "Hello Betty!",
 	  },
-	  {
-		  name:         "Multiple name",
-		  queryString:  "name=Betty&name=Holberton",
-		  responseCode: 200,
-		  body:         "Hello Betty!",
-		},
-	  {
-	  name:         "There",
-	  queryString:  "",
-	  responseCode: 200,
-	  body:         "Hello there!",
-	  },
-	}  }
+	{
+    name:         "There",
+    queryString:  "",
+    responseCode: 200,
+    body:         "Hello there!",
+    },
+  }
+
   for _, tt := range tests {
     t.Run(tt.name, func(t *testing.T) {
 
@@ -77,13 +78,15 @@ func Test_HelloHandler(t *testing.T) {
       if gotCode != expectedCode {
         t.Errorf("handler returned wrong status code: got %v want %v", gotCode, expectedCode)
       }
-
-      // Check that the response body is what you expect.
-      expectedBody := tt.body
-      gotBody := rr.Body.String()
-      if gotBody != expectedBody {
-        t.Errorf("handler returned unexpected body: got %v want %v", gotBody, expectedBody)
-      }
+	  
+	
+		// Check that the response body is what you expect.
+		expectedBody := tt.body
+		gotBody := rr.Body.String()
+		if gotBody != expectedBody {
+			t.Errorf("handler returned unexpected body: got %v want %v", gotBody, expectedBody)
+      	}	
+	  
     })
   }
 }

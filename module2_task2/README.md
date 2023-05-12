@@ -53,6 +53,21 @@ While the production team is building the new production platform for the websit
 
 As we are in a “DevOps” course, your “Ops” personality expects that this application is monitored by a “Health” page to determine if the application is running and ready to accept traffic.
 
+# Awesome API 
+
+This is a simple API built
+
+
+## Getting Started 
+
+Clone this repository to your local machine. Install dependencies with npm install. Start the server with npm start. Access the API at http://localhost:9999.
+
+## Endpoints 
+
+GET / - Returns a 404 error message. 
+GET /health - Returns "ALIVE" and logs a healthcheck message to ./awesome-api.log.
+
+
 ## Lifecycle
 
     - help: Print this help message.
@@ -63,3 +78,7 @@ As we are in a “DevOps” course, your “Ops” personality expects that this
     - test: Test the application.
     - lint: Test lint.
     - unit-tests: Test the unitest.
+
+## Logging 
+
+All logs are written to ./awesome-api.log using the Winston logger.
